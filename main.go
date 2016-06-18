@@ -26,6 +26,12 @@ func main() {
 
 		go_shark.PrintInterface(*current_iface);
 
+		stream := go_shark.GetPacketsStream(current_iface);
+
+		for packet := range stream {
+			fmt.Print(packet);
+		}
+
 
 	}
 }
